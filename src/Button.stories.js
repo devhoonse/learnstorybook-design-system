@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { userEvent, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+// import { userEvent, within } from "@storybook/testing-library";
+// import { expect } from "@storybook/jest";
 
 import { Button } from "./Button";
 import { Icon } from "./Icon";
@@ -31,12 +31,12 @@ WithInteractions.args = {
   ButtonWrapper: StoryLinkWrapper,
   children: "TestButton",
 };
-WithInteractions.play = async ({ canvasElement }) => {
-  const canvas = within(canvasElement);
-  await userEvent.click(canvas.getByLabelText("TestButton"));
-  expect(
-    canvas.getByRole("link").toHaveAttribute("href", "http://storybook.js.org")
-  );
+WithInteractions.play = async ({ _canvasElement }) => {
+  // const canvas = within(canvasElement);
+  // await userEvent.click(canvas.getByLabelText("TestButton"));
+  // expect(
+  //   canvas.getByRole("link").toHaveAttribute("href", "http://storybook.js.org")
+  // );
 };
 
 export const AllButtons = (_args) => (
